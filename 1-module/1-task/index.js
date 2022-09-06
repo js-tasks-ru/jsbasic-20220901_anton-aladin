@@ -6,7 +6,5 @@ function factorial(n) {
   while (n > 1) {
     factorial = factorial * --n;
   }
-
   return factorial;
 }
-factorial(5);
