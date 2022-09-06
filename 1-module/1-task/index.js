@@ -1,3 +1,12 @@
 function factorial(n) {
-  // ваш код...
+  let factorial = n;
+  if (factorial === 0 || factorial === 1) {
+    return factorial = 1;
+  }
+  while (n > 1) {
+    factorial = factorial * --n;
+  }
+
+  return factorial;
 }
+factorial(5);
