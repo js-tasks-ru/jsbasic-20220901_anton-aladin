@@ -1,3 +1,6 @@
 function isEmpty(obj) {
-  // ваш код...
+  for (const key in obj) {
+    if (Object.hasOwnProperty.call(obj, key)) return false;
+  }
+  return true;
 }
