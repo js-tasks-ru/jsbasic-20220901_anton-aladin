@@ -1,3 +1,6 @@
 function makeDiagonalRed(table) {
-  // ваш код...
+  let rows = table.querySelectorAll("tr");
+  rows.forEach((element, i) => {
+    element.cells[i].style.backgroundColor = 'red';
+  });
 }
