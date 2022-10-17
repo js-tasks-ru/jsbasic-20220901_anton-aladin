@@ -29,7 +29,7 @@ export default class Modal {
     document.addEventListener("keydown", this.closeByEsc);
   }
 
-  close = () => {
+  close(){
     if (document.body.querySelector(".modal")) {
       document.body.querySelector(".modal").remove();
       document.body.classList.remove("is-modal-open");
@@ -37,7 +37,7 @@ export default class Modal {
     }
   }
 
-  closeByEsc = (event) => {
+  closeByEsc(event) {
     if (event.code === "Escape") {
       document.removeEventListener("keydown", this.close);
       if (document.body.querySelector(".modal")) {
