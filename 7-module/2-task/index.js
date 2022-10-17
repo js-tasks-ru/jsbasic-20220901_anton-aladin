@@ -8,12 +8,9 @@ export default class Modal {
 
   #render() {
     let modal = createElement(`<div class="modal">
-    <!--Прозрачная подложка перекрывающая интерфейс-->
     <div class="modal__overlay"></div>
-
     <div class="modal__inner">
       <div class="modal__header">
-        <!--Кнопка закрытия модального окна-->
         <button type="button" class="modal__close">
           <img src="/assets/images/icons/cross-icon.svg" alt="close-icon" />
         </button>
@@ -28,23 +25,21 @@ export default class Modal {
   open() {
     document.body.appendChild(this.modal);
     document.body.classList.add("is-modal-open");
-    this.modal
-      .querySelector(".modal__close")
-      .addEventListener("click", () => this.close());
-    document.addEventListener("keydown", (event) => this.closeByEsc(event));
+    this.modal.querySelector(".modal__close").addEventListener("click", this.close);
+    document.addEventListener("keydown", this.closeByEsc);
   }
 
-  close() {
+  close = () => {
     if (document.body.querySelector(".modal")) {
       document.body.querySelector(".modal").remove();
       document.body.classList.remove("is-modal-open");
-      document.removeEventListener("keydown", this, false);
+      document.removeEventListener("keydown", this.close);
     }
   }
 
-  closeByEsc(event) {
+  closeByEsc = (event) => {
     if (event.code === "Escape") {
-      document.removeEventListener("keydown", this);
+      document.removeEventListener("keydown", this.close);
       if (document.body.querySelector(".modal")) {
         document.body.querySelector(".modal").remove();
         document.body.classList.remove("is-modal-open");
