@@ -9,7 +9,7 @@ export default class StepSlider {
     this.elem.addEventListener("click", (event) => this.#clickPosition(event));
     this.segmentSlider = steps - 1;
     this.stepCollection = this.elem.querySelectorAll(".slider__steps span");
-    this.stepCollection[this.value].classList.add("slider__step-active");
+    this.stepCollection[0].classList.add("slider__step-active");
     this.thumb = this.elem.querySelector(".slider__thumb");
     this.thumb.ondragstart = () => false;
     this.#dragEvents();
