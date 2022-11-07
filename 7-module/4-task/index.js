@@ -19,7 +19,7 @@ export default class StepSlider {
     let slider = createElement(`
     <div class="slider">
       <div class="slider__thumb" style="left:0">
-        <span class="slider__value">${this.value}</span>
+        <span class="slider__value">0</span>
       </div>
       <div class="slider__progress" style="width:0"></div>
       <div class="slider__steps">
